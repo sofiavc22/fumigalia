@@ -1,0 +1,42 @@
+---
+const phone = '6722671419';
+const whatsapp = `https://wa.me/52${phone}?text=${encodeURIComponent('Hola, necesito una cotización para control de plagas.')}`;
+const services = [
+  ['Cucarachas', 'Tratamiento puntual y seguimiento para que no vuelvan.'],
+  ['Chinches', 'Inspección y tratamiento completo para habitaciones y muebles.'],
+  ['Ratas y ratones', 'Control, trampas y prevención de nuevos accesos.'],
+  ['Hormigas y mosquitos', 'Eliminamos el problema en interiores y exteriores.'],
+];
+const areas = ['Coacalco', 'Tultitlán', 'Tultepec', 'Tlalnepantla', 'Ojo de Agua'];
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Control de plagas y fumigación en Coacalco, Tultitlán, Tultepec, Tlalnepantla y Ojo de Agua. Cotiza por WhatsApp." />
+    <title>Fumigalia | Control de plagas y fumigación</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231A3C40'/%3E%3Cpath d='M23 58h54M29 44h42M36 30h28' stroke='%23FFF275' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <header class="nav"><a class="brand" href="/">Fumi<span>galia</span></a><a class="nav-link" href={whatsapp}>WhatsApp: 672 267 1419</a></header>
+    <main>
+      <section class="hero">
+        <div class="hero-copy"><p class="eyebrow">CONTROL DE PLAGAS EN EL NORTE DEL VALLE DE MÉXICO</p><h1>Tu casa o negocio, <em>sin plagas.</em></h1><p class="lead">Eliminamos cucarachas, chinches, ratas, hormigas y otras plagas con atención rápida y soluciones pensadas para tu espacio.</p><a class="button" href={whatsapp}>Cotiza por WhatsApp <span>↗</span></a><p class="micro">Respuesta directa · Cotización sin compromiso</p></div>
+        <div class="hero-card"><div class="card-mark">✳</div><p>¿Qué estás viendo?</p><strong>Una plaga que no se va</strong><a href={whatsapp}>Cuéntanos qué pasa →</a></div>
+      </section>
+      <section class="trust"><span>Atención para casas y negocios</span><span>•</span><span>Productos cuidadosamente aplicados</span><span>•</span><span>Servicio local</span></section>
+      <section class="section"><div class="section-head"><p class="eyebrow">SOLUCIONES</p><h2>Resolvemos el problema desde la raíz.</h2><p>Primero entendemos dónde está la plaga. Después aplicamos el tratamiento adecuado y te decimos cómo evitar que regrese.</p></div><div class="grid">{services.map(([name, desc], i) => <article class="service"><div class="number">0{i + 1}</div><h3>Control de {name}</h3><p>{desc}</p><a href={whatsapp}>Necesito ayuda →</a></article>)}</div></section>
+      <section class="process"><div><p class="eyebrow">ASÍ FUNCIONA</p><h2>Claro desde el primer mensaje.</h2></div><ol><li><b>01</b><span><strong>Nos cuentas qué sucede</strong><br />Mándanos un mensaje y dinos qué plaga viste.</span></li><li><b>02</b><span><strong>Revisamos tu caso</strong><br />Te hacemos unas preguntas y te orientamos.</span></li><li><b>03</b><span><strong>Agendamos la solución</strong><br />Coordinamos la visita y el tratamiento.</span></li></ol></section>
+      <section class="areas"><p class="eyebrow">ZONAS DE SERVICIO</p><h2>Estamos cerca de ti.</h2><div class="area-list">{areas.map((area) => <span>{area}</span>)}</div></section>
+      <section class="cta"><p class="eyebrow">NO ESPERES A QUE EMPEORE</p><h2>Cuéntanos qué plaga tienes.</h2><p>Te orientamos por WhatsApp y te damos el siguiente paso.</p><a class="button dark" href={whatsapp}>Hablar con Fumigalia <span>↗</span></a></section>
+    </main>
+    <footer><span class="brand">Fumi<span>galia</span></span><span>Coacalco · Tultitlán · Tultepec · Tlalnepantla · Ojo de Agua</span><a href={whatsapp}>672 267 1419</a></footer>
+  </body>
+</html>
+<style>
+  :global(*){box-sizing:border-box}:global(body){margin:0;background:#f8f8f2;color:#1A3C40;font-family:Inter,system-ui,sans-serif}:global(a){color:inherit;text-decoration:none}.nav{display:flex;justify-content:space-between;align-items:center;padding:27px 6vw}.brand{font-weight:800;font-size:1.55rem;letter-spacing:-.07em}.brand span{color:#7b8f50}.nav-link{font-size:.88rem;font-weight:600;border-bottom:1px solid #1A3C40}.hero{min-height:650px;padding:80px 10vw 90px;display:grid;grid-template-columns:1.25fr .75fr;gap:7vw;align-items:center;background:#1A3C40;color:#f8f8f2}.eyebrow{font-size:.72rem;letter-spacing:.13em;font-weight:700;color:#9bab71;margin:0 0 22px}.hero h1{font-size:clamp(3.3rem,7vw,7.2rem);line-height:.94;letter-spacing:-.085em;margin:0;max-width:780px}.hero h1 em{color:#FFF275;font-style:normal}.lead{font-size:1.1rem;line-height:1.65;max-width:550px;color:#d4dfd7;margin:31px 0}.button{display:inline-flex;align-items:center;gap:30px;background:#FFF275;color:#1A3C40;border-radius:100px;padding:17px 22px 17px 26px;font-weight:800}.button span{font-size:1.25rem}.micro{font-size:.75rem;color:#a9beb4;margin-top:15px}.hero-card{background:#FFF275;color:#1A3C40;min-height:270px;padding:34px;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(3deg);box-shadow:14px 14px 0 #102f32}.hero-card p{margin:0;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em}.hero-card strong{font-size:2rem;line-height:1;letter-spacing:-.07em;max-width:220px}.hero-card a{font-size:.85rem;font-weight:700}.card-mark{font-size:2.4rem}.trust{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;padding:22px 5vw;border-bottom:1px solid #dbe0d4;color:#61736d;font-size:.78rem;font-weight:600}.section{padding:110px 10vw}.section-head{max-width:650px}.section h2,.process h2,.areas h2,.cta h2{font-size:clamp(2.5rem,5vw,5rem);line-height:.98;letter-spacing:-.08em;margin:0 0 24px}.section-head>p:last-child{line-height:1.6;color:#61736d}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:65px}.service{padding:25px;border-top:2px solid #1A3C40;min-height:225px}.number{color:#9bab71;font-weight:700;font-size:.78rem}.service h3{font-size:1.3rem;letter-spacing:-.04em}.service p{font-size:.9rem;line-height:1.5;color:#61736d}.service a{font-size:.8rem;font-weight:700}.process{background:#e9eddf;padding:95px 10vw;display:grid;grid-template-columns:1fr 1fr;gap:8vw}.process ol{list-style:none;padding:0;margin:0}.process li{display:flex;gap:25px;padding:23px 0;border-top:1px solid #c4cfbe;line-height:1.5}.process li b{color:#899d5c}.process li span{font-size:.9rem;color:#61736d}.process li strong{color:#1A3C40}.areas{padding:100px 10vw}.area-list{display:flex;gap:11px;flex-wrap:wrap;margin-top:45px}.area-list span{border:1px solid #b8c6b2;border-radius:100px;padding:14px 20px;font-weight:600}.cta{margin:0 6vw 70px;background:#FFF275;padding:75px 8vw}.cta p:not(.eyebrow){color:#53695e}.dark{background:#1A3C40;color:#FFF275;margin-top:20px}footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:35px 6vw;border-top:1px solid #dbe0d4;color:#61736d;font-size:.75rem}footer .brand{color:#1A3C40}footer a{font-weight:700;color:#1A3C40}@media(max-width:750px){.nav{padding:22px 6vw}.nav-link{font-size:.72rem}.hero{padding:65px 7vw;display:block;min-height:auto}.hero h1{font-size:4.3rem}.hero-card{margin:65px 12px 15px;min-height:220px}.section,.areas{padding:75px 7vw}.grid{grid-template-columns:1fr 1fr;margin-top:40px}.process{padding:70px 7vw;display:block}.process ol{margin-top:40px}.cta{margin:0 0 30px;padding:65px 7vw}.trust{justify-content:flex-start;gap:10px}.trust span:nth-child(even){display:none}}
+</style>
